@@ -1,12 +1,49 @@
+import { useState } from "react";
 import "./App.css";
-import akad from "../public/images/akad.jpg"
-import akad2 from "../public/images/akad2.jpg"
-import catcutting from "../public/images/cakecuttingconfetti.jpg"
-import couplepotrait from "../public/images/couplepotrait.jpg"
-import raffles from "../public/images/raffles.jpg"
-import selfpotrait from "../public/images/selfpotrait.jpg"
+
+import akad from "../public/images/akad.jpg";
+import akad2 from "../public/images/akad2.jpg";
+import catcutting from "../public/images/cakecuttingconfetti.jpg";
+import couplepotrait from "../public/images/couplepotrait.jpg";
+import raffles from "../public/images/raffles.jpg";
+import selfpotrait from "../public/images/selfpotrait.jpg";
 
 function App() {
+  const [formStatus, setFormStatus] = useState("idle"); // idle | sending | success | error
+
+  const encode = (data) =>
+    Object.keys(data)
+      .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setFormStatus("sending");
+
+    const form = e.target;
+    const formData = new FormData(form);
+
+    const data = Object.fromEntries(formData.entries());
+    data["form-name"] = "contact";
+
+    try {
+      const res = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode(data),
+      });
+
+      if (res.ok) {
+        setFormStatus("success");
+        form.reset();
+      } else {
+        setFormStatus("error");
+      }
+    } catch (err) {
+      setFormStatus("error");
+    }
+  };
+
   return (
     <div className="app">
       {/* NAVBAR */}
@@ -27,9 +64,7 @@ function App() {
       >
         <div className="hero-overlay" />
         <div className="hero-content">
-          <p className="hero-tagline">
-            Cinematic photography in warm, quiet light.
-          </p>
+          <p className="hero-tagline">Cinematic photography in warm, quiet light.</p>
           <h1 className="hero-title">Temaram Films</h1>
           <div className="hero-buttons">
             <a href="#contact" className="btn btn-secondary">
@@ -48,9 +83,9 @@ function App() {
           <div className="about-text">
             <h2>About Temaram</h2>
             <p>
-              Temaram is the soft, dim warmth of light at its most honest
-              moment. Temaram Films is my way of capturing stories in that gentle
-              glow — warm, quiet, and deeply human.
+              Temaram is the soft, dim warmth of light at its most honest moment.
+              Temaram Films is my way of capturing stories in that gentle glow —
+              warm, quiet, and deeply human.
             </p>
             <p>
               I create cinematic portraits, couples sessions and intimate event
@@ -64,9 +99,7 @@ function App() {
       <section id="portfolio" className="section section-portfolio">
         <div className="section-inner">
           <h2>Featured Work</h2>
-          <p className="section-subtitle">
-            A few frames in warm, cinematic light.
-          </p>
+          <p className="section-subtitle">A few frames in warm, cinematic light.</p>
           <div className="portfolio-grid">
             <img src={akad} alt="Akad ceremony moment" />
             <img src={couplepotrait} alt="Outdoor wedding couple" />
@@ -93,9 +126,7 @@ function App() {
             <div className="service-card">
               <h3>Couples</h3>
               <p>1.5 hours • 30 edited photos • multiple locations.</p>
-              <span className="service-note">
-                For stories that feel like dusk.
-              </span>
+              <span className="service-note">For stories that feel like dusk.</span>
             </div>
             <div className="service-card">
               <h3>Events</h3>
@@ -121,39 +152,12 @@ function App() {
             className="contact-form"
             name="contact"
             method="POST"
-            action="/success"
             data-netlify="true"
             data-netlify-honeypot="bot-field"
-            onSubmit={async (e) => {
-              e.preventDefault();
-
-              const form = e.currentTarget;
-              const formData = new FormData(form);
-
-              // Netlify expects x-www-form-urlencoded
-              const body = new URLSearchParams(formData).toString();
-
-              try {
-                const res = await fetch("/", {
-                  method: "POST",
-                  headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                  body,
-                });
-
-                if (res.ok) {
-                  window.location.href = "/success";
-                } else {
-                  alert("Oops — failed to send. Try again or WhatsApp me.");
-                }
-              } catch (err) {
-                alert("Network issue — please try again or WhatsApp me.");
-              }
-            }}
+            onSubmit={handleSubmit}
           >
-            {/* Required for Netlify to detect the form */}
+            {/* Netlify needs these */}
             <input type="hidden" name="form-name" value="contact" />
-
-            {/* Honeypot (spam bot trap) */}
             <p style={{ display: "none" }}>
               <label>
                 Don’t fill this out: <input name="bot-field" />
@@ -174,7 +178,7 @@ function App() {
             <div className="form-row">
               <div className="form-field">
                 <label htmlFor="sessionType">Type of session</label>
-                <select id="sessionType" name="sessionType" defaultValue="" required>
+                <select id="sessionType" name="sessionType" defaultValue="">
                   <option value="" disabled>
                     Select an option
                   </option>
@@ -193,13 +197,28 @@ function App() {
                 name="message"
                 rows="4"
                 placeholder="Tell me about your idea, date, vibe…"
-                required
               />
             </div>
 
+            {/* Status message */}
+            {formStatus === "success" && (
+              <p style={{ marginTop: "12px" }}>
+                ✅ Sent! I’ll get back to you soon.
+              </p>
+            )}
+            {formStatus === "error" && (
+              <p style={{ marginTop: "12px" }}>
+                ❌ Something went wrong. Please try again or WhatsApp me.
+              </p>
+            )}
+
             <div className="form-actions">
-              <button type="submit" className="btn btn-primary">
-                Send Enquiry
+              <button
+                type="submit"
+                className="btn btn-primary"
+                disabled={formStatus === "sending"}
+              >
+                {formStatus === "sending" ? "Sending..." : "Send Enquiry"}
               </button>
               <a
                 href="https://wa.me/6596480983"

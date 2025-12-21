@@ -235,10 +235,10 @@ function App() {
         <div className="footer-inner">
           <span>© {new Date().getFullYear()} Temaram Films</span>
           <div className="footer-links">
+            <a href="https://tiktok.com" target="_blank" rel="noreferrer">TikTok</a>
             <a href="https://instagram.com" target="_blank" rel="noreferrer">
               Instagram
             </a>
-            <a href="mailto:youremail@example.com">Email</a>
           </div>
         </div>
       </footer>

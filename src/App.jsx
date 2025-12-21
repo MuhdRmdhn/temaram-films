@@ -1,10 +1,10 @@
 import "./App.css";
-import akad from "../src/images/akad.JPG"
-import akad2 from "../src/images/akad2.JPG"
-import catcutting from "../src/images/cakecuttingconfetti.JPG"
-import couplepotrait from "../src/images/couplepotrait.JPG"
-import raffles from "../src/images/raffles.JPG"
-import selfpotrait from "../src/images/selfpotrait.JPG"
+import akad from "../src/images/akad.jpg"
+import akad2 from "../src/images/akad2.jpg"
+import catcutting from "../src/images/cakecuttingconfetti.jpg"
+import couplepotrait from "../src/images/couplepotrait.jpg"
+import raffles from "../src/images/raffles.jpg"
+import selfpotrait from "../src/images/selfpotrait.jpg"
 
 function App() {
   return (
@@ -68,9 +68,9 @@ function App() {
             A few frames in warm, cinematic light.
           </p>
           <div className="portfolio-grid">
-            <img src={couplepotrait} alt="Outdoor wedding couple" />
             <img src={akad} alt="Akad ceremony moment" />
-            <img src={catcutting} alt="Wedding celebration with confetti" />
+            <img src={couplepotrait} alt="Outdoor wedding couple" />
+            <img src={akad2} alt="Wedding celebration with confetti" />
           </div>
         </div>
       </section>

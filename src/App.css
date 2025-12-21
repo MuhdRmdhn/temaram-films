@@ -1,0 +1,522 @@
+:root {
+  --bg-main: #f5efe6;        /* warm ivory */
+  --bg-alt: #ece4d8;         /* soft parchment */
+  --bg-dark: #1f1b18;        /* espresso brown (footer / overlays) */
+
+  --text-main: #2a2420;      /* rich charcoal */
+  --text-muted: #6f645c;     /* warm grey */
+
+  --brand: #8b6a4f;          /* muted bronze */
+  --brand-soft: #b89a7a;     /* soft gold accent */
+
+  --white: #ffffff;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+}
+
+/* IMPORTANT: App.css should NOT style #root.
+   index.css already handles #root sizing. */
+
+.app {
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* NAVBAR */
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3rem;
+  backdrop-filter: blur(10px);
+  background: rgba(242, 232, 213, 0.7);
+  z-index: 20;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+/* If you use an image logo later */
+.nav-logo img {
+  height: 28px;
+  width: auto;
+  display: block;
+}
+
+.nav-links a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: var(--text-main);
+  font-size: 0.9rem;
+}
+
+.nav-links a:hover {
+  opacity: 0.7;
+}
+
+/* HERO */
+
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 0 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-image: url("https://images.pexels.com/photos/1834399/pexels-photo-1834399.jpeg?auto=compress&cs=tinysrgb&w=1200");
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 20% 20%,
+    transparent 0,
+    rgba(0, 0, 0, 0.4) 70%
+  );
+}
+
+.hero-content {
+  position: relative;
+  max-width: 480px;
+  color: var(--white);
+}
+
+.hero-tagline {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.75rem;
+  margin-bottom: 0.75rem;
+  opacity: 0.8;
+}
+
+.hero-title {
+  font-size: 2.8rem;
+  margin: 0 0 1rem 0;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+/* SECTIONS */
+
+.section {
+  padding: 5rem 3rem;
+}
+
+.section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.8rem;
+}
+
+.section-subtitle {
+  margin: 0 0 2rem 0;
+  color: var(--text-muted);
+}
+
+/* ABOUT */
+
+.section-about {
+  background-color: var(--bg-main);
+}
+
+.about-inner {
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.3fr);
+  align-items: center;
+}
+
+.about-photo-placeholder {
+  width: 100%;
+  padding-top: 110%;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #d6b8a1, #f2e4d4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  color: rgba(47, 42, 39, 0.7);
+}
+
+.about-text p {
+  margin-top: 0;
+  margin-bottom: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* PORTFOLIO PREVIEW */
+
+.section-portfolio {
+  background-color: #f6efe3;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.portfolio-item {
+  padding-top: 70%;
+  border-radius: 16px;
+  background: #d8c3b0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(47, 42, 39, 0.8);
+  font-size: 0.85rem;
+}
+
+.portfolio-grid img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 3 / 4; /* cinematic portrait ratio */
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+}
+
+.about-photo {
+  width: 100%;
+  max-width: 420px; /* keeps it elegant, not huge */
+}
+
+.about-photo img {
+  width: 100%;
+  aspect-ratio: 3 / 4;   /* portrait, cinematic */
+  object-fit: cover;
+  border-radius: 18px;
+  display: block;
+}
+/* SERVICES */
+
+.section-services {
+  background-color: var(--bg-accent);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.service-card {
+  background: rgba(242, 232, 213, 0.85);
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+.service-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.service-card p {
+  margin: 0 0 0.75rem 0;
+  color: var(--text-muted);
+}
+
+.service-note {
+  font-size: 0.8rem;
+  color: var(--text-main);
+}
+
+/* CONTACT */
+
+.section-contact {
+  background-color: var(--bg-main);
+}
+
+.contact-inner {
+  max-width: 760px;
+  text-align: left;
+}
+
+.contact-inner h2 {
+  margin-bottom: 0.5rem;
+}
+
+.contact-inner p {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: var(--text-muted);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-field label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+input,
+select,
+textarea {
+  border-radius: 10px;
+  border: 1px solid #d5c6b4;
+  padding: 0.6rem 0.8rem;
+  font: inherit;
+  background-color: #f8f1e8;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* BUTTONS */
+
+.btn {
+  border-radius: 999px;
+  border: none;
+  padding: 0.65rem 1.3rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-primary {
+  background-color: var(--brand);
+  color: var(--white);
+}
+
+.btn-secondary {
+  background-color: rgba(242, 232, 213, 0.95);
+  color: var(--text-main);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--text-main);
+  color: var(--text-main);
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+/* FOOTER */
+
+.footer {
+  width: 100%;
+  background-color: #2f2a27;
+  color: #f2e8d5;
+  padding: 1.5rem 3rem;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.footer-links a {
+  color: #f2e8d5;
+  text-decoration: none;
+  margin-left: 1rem;
+}
+
+.footer-links a:hover {
+  opacity: 0.75;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+  .nav {
+    padding: 0 1.5rem;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hero {
+    padding: 0 1.5rem;
+  }
+
+  .hero-title {
+    font-size: 2.1rem;
+  }
+
+  .section {
+    padding: 3.5rem 1.5rem;
+  }
+
+  .about-inner,
+  .services-grid,
+  .portfolio-grid,
+  .form-row {
+    grid-template-columns: 1fr !important;
+    flex-direction: column;
+  }
+
+  /* =========================
+   MOBILE OPTIMISATION
+   ========================= */
+
+@media (max-width: 768px) {
+
+  /* NAVBAR */
+  .nav {
+    padding: 0 1.25rem;
+    height: 56px;
+  }
+
+  .nav-logo {
+    font-size: 0.85rem;
+  }
+
+  .nav-links {
+    display: none; /* clean for now, no burger yet */
+  }
+
+  /* HERO */
+  .hero {
+    padding: 0 1.25rem;
+    min-height: 90vh;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    padding-top: 56px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+    line-height: 1.15;
+  }
+
+  .hero-tagline {
+    font-size: 0.7rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* SECTIONS */
+  .section {
+    padding: 3rem 1.25rem;
+  }
+
+  .section-inner {
+    max-width: 100%;
+  }
+
+  /* ABOUT */
+  .about-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-photo {
+    max-width: 100%;
+  }
+
+  /* PORTFOLIO */
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-grid img {
+    aspect-ratio: 4 / 5; /* feels better on phone */
+  }
+
+  /* SERVICES */
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  /* CONTACT */
+  .contact-inner {
+    max-width: 100%;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  /* FOOTER */
+  .footer {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: center;
+  }
+
+  .footer-links a {
+    margin-left: 0;
+    margin-right: 1rem;
+  }
+}
+}

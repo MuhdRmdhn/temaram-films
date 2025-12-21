@@ -153,9 +153,7 @@ function App() {
             name="contact"
             method="POST"
             data-netlify="true"
-            data-netlify-honeypot="bot-field"
-            onSubmit={handleSubmit}
-            netlify
+            action="/"
           >
             {/* Netlify needs these */}
             <input type="hidden" name="form-name" value="contact" />

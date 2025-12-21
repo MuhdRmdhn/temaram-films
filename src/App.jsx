@@ -121,9 +121,45 @@ function App() {
             className="contact-form"
             name="contact"
             method="POST"
+            action="/success"
             data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            onSubmit={async (e) => {
+              e.preventDefault();
+
+              const form = e.currentTarget;
+              const formData = new FormData(form);
+
+              // Netlify expects x-www-form-urlencoded
+              const body = new URLSearchParams(formData).toString();
+
+              try {
+                const res = await fetch("/", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                  body,
+                });
+
+                if (res.ok) {
+                  window.location.href = "/success";
+                } else {
+                  alert("Oops — failed to send. Try again or WhatsApp me.");
+                }
+              } catch (err) {
+                alert("Network issue — please try again or WhatsApp me.");
+              }
+            }}
           >
-          <input type="hidden" name="form-name" value="contact" />
+            {/* Required for Netlify to detect the form */}
+            <input type="hidden" name="form-name" value="contact" />
+
+            {/* Honeypot (spam bot trap) */}
+            <p style={{ display: "none" }}>
+              <label>
+                Don’t fill this out: <input name="bot-field" />
+              </label>
+            </p>
+
             <div className="form-row">
               <div className="form-field">
                 <label htmlFor="name">Name</label>
@@ -138,7 +174,7 @@ function App() {
             <div className="form-row">
               <div className="form-field">
                 <label htmlFor="sessionType">Type of session</label>
-                <select id="sessionType" name="sessionType" defaultValue="">
+                <select id="sessionType" name="sessionType" defaultValue="" required>
                   <option value="" disabled>
                     Select an option
                   </option>
@@ -157,6 +193,7 @@ function App() {
                 name="message"
                 rows="4"
                 placeholder="Tell me about your idea, date, vibe…"
+                required
               />
             </div>
 
@@ -165,7 +202,7 @@ function App() {
                 Send Enquiry
               </button>
               <a
-                href="https://wa.me/6596480983" // change to your real WhatsApp link
+                href="https://wa.me/6596480983"
                 className="btn btn-secondary"
               >
                 WhatsApp Me

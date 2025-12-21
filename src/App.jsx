@@ -1,10 +1,10 @@
 import "./App.css";
-import akad from "../src/images/akad.jpg"
-import akad2 from "../src/images/akad2.jpg"
-import catcutting from "../src/images/cakecuttingconfetti.jpg"
-import couplepotrait from "../src/images/couplepotrait.jpg"
-import raffles from "../src/images/raffles.jpg"
-import selfpotrait from "../src/images/selfpotrait.jpg"
+import akad from "../public/images/akad.jpg"
+import akad2 from "../public/images/akad2.jpg"
+import catcutting from "../public/images/cakecuttingconfetti.jpg"
+import couplepotrait from "../public/images/couplepotrait.jpg"
+import raffles from "../public/images/raffles.jpg"
+import selfpotrait from "../public/images/selfpotrait.jpg"
 
 function App() {
   return (

@@ -81,7 +81,7 @@ function App() {
             <img src={selfpotrait} alt="Quiet portrait" />
           </div>
           <div className="about-text">
-            <h2>About Temaram</h2>
+            <h2>About</h2><h2 className="section-title">Temaram Films</h2>
             <p>
             Temaram is the quiet warmth of light at its most honest.
             It’s in the soft shadows, the in-between moments,

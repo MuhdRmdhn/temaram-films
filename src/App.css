@@ -1,13 +1,20 @@
 :root {
-  --bg-main: #f5efe6;        /* warm ivory */
-  --bg-alt: #ece4d8;         /* soft parchment */
-  --bg-dark: #1f1b18;        /* espresso brown (footer / overlays) */
+  --bg-main: #f5efe6;
+  /* warm ivory */
+  --bg-alt: #ece4d8;
+  /* soft parchment */
+  --bg-dark: #1f1b18;
+  /* espresso brown (footer / overlays) */
 
-  --text-main: #2a2420;      /* rich charcoal */
-  --text-muted: #6f645c;     /* warm grey */
+  --text-main: #2a2420;
+  /* rich charcoal */
+  --text-muted: #6f645c;
+  /* warm grey */
 
-  --brand: #8b6a4f;          /* muted bronze */
-  --brand-soft: #b89a7a;     /* soft gold accent */
+  --brand: #8b6a4f;
+  /* muted bronze */
+  --brand-soft: #b89a7a;
+  /* soft gold accent */
 
   --white: #ffffff;
 }
@@ -74,14 +81,18 @@ body {
 
 .brand-logo {
   font-family: "Cormorant Garamond", serif;
-  font-size: 2.1rem;          /* smaller = classier */
+  font-size: 2.1rem;
+  /* smaller = classier */
   font-weight: 500;
-  letter-spacing: 0.04em;     /* THIS is the secret */
+  letter-spacing: 0.04em;
+  /* THIS is the secret */
 }
 
 .brand-logo-hero {
-  font-size: 3.8rem;      /* sweet spot */
-  letter-spacing: 0.06em; /* scale spacing with size */
+  font-size: 3.8rem;
+  /* sweet spot */
+  letter-spacing: 0.06em;
+  /* scale spacing with size */
 }
 
 
@@ -103,12 +114,10 @@ body {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 0.6) 0%,
-    rgba(0, 0, 0, 0.35) 45%,
-    rgba(0, 0, 0, 0.1) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0.35) 45%,
+      rgba(0, 0, 0, 0.1) 100%);
 }
 
 .hero-content {
@@ -143,6 +152,13 @@ body {
 
 .section {
   padding: 5rem 3rem;
+}
+
+.section-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.1rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
 }
 
 .section-inner {
@@ -218,7 +234,8 @@ body {
 .portfolio-grid img {
   width: 100%;
   height: 100%;
-  aspect-ratio: 3 / 4; /* cinematic portrait ratio */
+  aspect-ratio: 3 / 4;
+  /* cinematic portrait ratio */
   object-fit: cover;
   border-radius: 16px;
   display: block;
@@ -226,16 +243,19 @@ body {
 
 .about-photo {
   width: 100%;
-  max-width: 420px; /* keeps it elegant, not huge */
+  max-width: 420px;
+  /* keeps it elegant, not huge */
 }
 
 .about-photo img {
   width: 100%;
-  aspect-ratio: 3 / 4;   /* portrait, cinematic */
+  aspect-ratio: 3 / 4;
+  /* portrait, cinematic */
   object-fit: cover;
   border-radius: 18px;
   display: block;
 }
+
 /* SERVICES */
 
 .section-services {
@@ -432,109 +452,111 @@ textarea {
    MOBILE OPTIMISATION
    ========================= */
 
-@media (max-width: 768px) {
+  @media (max-width: 768px) {
 
-  /* NAVBAR */
-  .nav {
-    padding: 0 1.25rem;
-    height: 56px;
-  }
+    /* NAVBAR */
+    .nav {
+      padding: 0 1.25rem;
+      height: 56px;
+    }
 
-  .nav-logo {
-    font-size: 0.85rem;
-  }
+    .nav-logo {
+      font-size: 0.85rem;
+    }
 
-  .nav-links {
-    display: none; /* clean for now, no burger yet */
-  }
+    .nav-links {
+      display: none;
+      /* clean for now, no burger yet */
+    }
 
-  /* HERO */
-  .hero {
-    padding: 0 1.25rem;
-    min-height: 90vh;
-  }
+    /* HERO */
+    .hero {
+      padding: 0 1.25rem;
+      min-height: 90vh;
+    }
 
-  .hero-content {
-    max-width: 100%;
-    padding-top: 56px;
-  }
+    .hero-content {
+      max-width: 100%;
+      padding-top: 56px;
+    }
 
-  .hero-title {
-    font-size: 2rem;
-    line-height: 1.15;
-  }
+    .hero-title {
+      font-size: 2rem;
+      line-height: 1.15;
+    }
 
-  .hero-tagline {
-    font-size: 0.7rem;
-  }
+    .hero-tagline {
+      font-size: 0.7rem;
+    }
 
-  .hero-buttons {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+    .hero-buttons {
+      flex-direction: column;
+      align-items: flex-start;
+    }
 
-  .hero-buttons .btn {
-    width: 100%;
-    justify-content: center;
-  }
+    .hero-buttons .btn {
+      width: 100%;
+      justify-content: center;
+    }
 
-  /* SECTIONS */
-  .section {
-    padding: 3rem 1.25rem;
-  }
+    /* SECTIONS */
+    .section {
+      padding: 3rem 1.25rem;
+    }
 
-  .section-inner {
-    max-width: 100%;
-  }
+    .section-inner {
+      max-width: 100%;
+    }
 
-  /* ABOUT */
-  .about-inner {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
+    /* ABOUT */
+    .about-inner {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
 
-  .about-photo {
-    max-width: 100%;
-  }
+    .about-photo {
+      max-width: 100%;
+    }
 
-  /* PORTFOLIO */
-  .portfolio-grid {
-    grid-template-columns: 1fr;
-  }
+    /* PORTFOLIO */
+    .portfolio-grid {
+      grid-template-columns: 1fr;
+    }
 
-  .portfolio-grid img {
-    aspect-ratio: 4 / 5; /* feels better on phone */
-  }
+    .portfolio-grid img {
+      aspect-ratio: 4 / 5;
+      /* feels better on phone */
+    }
 
-  /* SERVICES */
-  .services-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
+    /* SERVICES */
+    .services-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
 
-  /* CONTACT */
-  .contact-inner {
-    max-width: 100%;
-  }
+    /* CONTACT */
+    .contact-inner {
+      max-width: 100%;
+    }
 
-  .form-row {
-    flex-direction: column;
-  }
+    .form-row {
+      flex-direction: column;
+    }
 
-  /* FOOTER */
-  .footer {
-    padding: 1.5rem 1.25rem;
-  }
+    /* FOOTER */
+    .footer {
+      padding: 1.5rem 1.25rem;
+    }
 
-  .footer-inner {
-    flex-direction: column;
-    gap: 0.75rem;
-    text-align: center;
-  }
+    .footer-inner {
+      flex-direction: column;
+      gap: 0.75rem;
+      text-align: center;
+    }
 
-  .footer-links a {
-    margin-left: 0;
-    margin-right: 1rem;
+    .footer-links a {
+      margin-left: 0;
+      margin-right: 1rem;
+    }
   }
-}
 }

@@ -48,8 +48,7 @@ function App() {
     <div className="app">
       {/* NAVBAR */}
       <header className="nav">
-        <h1 className="brand-logo">Temaram</h1>
-        <span className="brand-sub">FILMS</span>
+        <div className="brand-logo">Temaram Films</div>
         <nav className="nav-links">
           <a href="#about">About</a>
           <a href="#services">Services</a>

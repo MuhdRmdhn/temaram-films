@@ -79,6 +79,12 @@ body {
   letter-spacing: 0.04em;     /* THIS is the secret */
 }
 
+.brand-logo-hero {
+  font-size: 3.8rem;      /* sweet spot */
+  letter-spacing: 0.06em; /* scale spacing with size */
+}
+
+
 /* HERO */
 
 .hero {

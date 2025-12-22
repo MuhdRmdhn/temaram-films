@@ -79,6 +79,13 @@ body {
   letter-spacing: 0.04em;     /* THIS is the secret */
 }
 
+.brand-films {
+  font-size: 0.75em;
+  letter-spacing: 0.35em;
+  font-weight: 400;
+  opacity: 0.75;
+}
+
 
 
 /* HERO */

@@ -73,9 +73,12 @@ body {
 }
 
 .brand-logo {
-  font-family: "Allura", cursive;
-  font-size: 2.6rem;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.1rem;          /* smaller = classier */
+  font-weight: 500;
+  letter-spacing: 0.04em;     /* THIS is the secret */
 }
+
 
 
 /* HERO */

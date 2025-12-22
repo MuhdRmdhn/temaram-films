@@ -65,7 +65,7 @@ function App() {
         <div className="hero-overlay" />
         <div className="hero-content">
           <p className="hero-tagline">Cinematic photography in warm, quiet light.</p>
-          <h1 className="hero-title">Temaram Films</h1>
+          <h1 className="brand-logo">Temaram Films</h1>
           <div className="hero-buttons">
             <a href="#contact" className="btn btn-secondary">
               Book a Session

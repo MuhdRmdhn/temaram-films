@@ -48,7 +48,8 @@ function App() {
     <div className="app">
       {/* NAVBAR */}
       <header className="nav">
-        <div className="nav-logo">Temaram Films</div>
+        <h1 className="brand-logo">Temaram</h1>
+        <span className="brand-sub">FILMS</span>
         <nav className="nav-links">
           <a href="#about">About</a>
           <a href="#services">Services</a>
@@ -81,20 +82,19 @@ function App() {
             <img src={selfpotrait} alt="Quiet portrait" />
           </div>
           <div className="about-text">
-  <h2>About Temaram</h2>
-  <p>
-    Temaram is the quiet warmth of light at its most honest.
-    It’s in the soft shadows, the in-between moments,
-    and the stillness that often goes unnoticed.
-  </p>
-  <p>
-    Temaram Films focuses on cinematic portraits, couples sessions,
-    and intimate event coverage, captured with a film-inspired,
-    nostalgic approach. Every session is guided by simplicity,
-    patience, and a respect for genuine connection.
-  </p>
-</div>
-
+            <h2>About Temaram</h2>
+            <p>
+            Temaram is the quiet warmth of light at its most honest.
+            It’s in the soft shadows, the in-between moments,
+            and the stillness that often goes unnoticed.
+            </p>
+            <p>
+            Temaram Films focuses on cinematic portraits, couples sessions,
+            and intimate event coverage, captured with a film-inspired,
+            nostalgic approach. Every session is guided by simplicity,
+            patience, and a respect for genuine connection.
+            </p>
+          </div>
         </div>
       </section>
 

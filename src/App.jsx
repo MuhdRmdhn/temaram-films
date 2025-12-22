@@ -81,17 +81,20 @@ function App() {
             <img src={selfpotrait} alt="Quiet portrait" />
           </div>
           <div className="about-text">
-            <h2>About Temaram</h2>
-            <p>
-              Temaram is the soft, dim warmth of light at its most honest moment.
-              Temaram Films is my way of capturing stories in that gentle glow —
-              warm, quiet, and deeply human.
-            </p>
-            <p>
-              I create cinematic portraits, couples sessions and intimate event
-              coverage with a nostalgic, film-inspired feel.
-            </p>
-          </div>
+  <h2>About Temaram</h2>
+  <p>
+    Temaram is the quiet warmth of light at its most honest.
+    It’s in the soft shadows, the in-between moments,
+    and the stillness that often goes unnoticed.
+  </p>
+  <p>
+    Temaram Films focuses on cinematic portraits, couples sessions,
+    and intimate event coverage, captured with a film-inspired,
+    nostalgic approach. Every session is guided by simplicity,
+    patience, and a respect for genuine connection.
+  </p>
+</div>
+
         </div>
       </section>
 

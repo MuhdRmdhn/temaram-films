@@ -103,10 +103,11 @@ body {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-    circle at 20% 20%,
-    transparent 0,
-    rgba(0, 0, 0, 0.4) 70%
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.35) 45%,
+    rgba(0, 0, 0, 0.1) 100%
   );
 }
 
@@ -125,9 +126,13 @@ body {
 }
 
 .hero-title {
-  font-size: 2.8rem;
+  font-size: clamp(3.4rem, 6vw, 4.6rem);
   margin: 0 0 1rem 0;
+  letter-spacing: 0.06em;
+  font-weight: 500;
+  text-shadow: 0 8px 28px rgba(0, 0, 0, 0.55);
 }
+
 
 .hero-buttons {
   display: flex;

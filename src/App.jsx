@@ -7,8 +7,8 @@ import cakecutting from "../public/images/cakecuttingconfetti.jpg";
 import couplepotrait from "../public/images/couplepotrait.jpg";
 import raffles from "../public/images/raffles.jpg";
 import selfpotrait from "../public/images/selfpotrait.jpg";
-import groomsmen from "..public/images/groomsmen.jpg";
-import selfpotrait2 from "..public/images/selfpotrait2.jpg";
+import groomsmen from "../public/images/groomsmen.jpg";
+import selfpotrait2 from "../public/images/selfpotrait2.jpg";
 
 function App() {
   const [formStatus, setFormStatus] = useState("idle"); // idle | sending | success | error

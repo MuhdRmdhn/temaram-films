@@ -109,8 +109,6 @@ function App() {
             <img src={couplepotrait} alt="Outdoor wedding couple" />
             <img src={akad2} alt="akad ceremony moment" />
             <img src={cakecutting} alt="Wedding celebration with confetti" />
-            <img src={groomsmen} alt="groomsmen shoot"/>
-            <img src={selfpotrait2} alt="self potrait" />
           </div>
         </div>
       </section>

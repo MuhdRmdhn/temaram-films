@@ -7,6 +7,8 @@ import cakecutting from "../public/images/cakecuttingconfetti.jpg";
 import couplepotrait from "../public/images/couplepotrait.jpg";
 import raffles from "../public/images/raffles.jpg";
 import selfpotrait from "../public/images/selfpotrait.jpg";
+import groomsmen from "..public/images/groomsmen";
+import selfpotrait2 from "..public/images/selfpotrait2";
 
 function App() {
   const [formStatus, setFormStatus] = useState("idle"); // idle | sending | success | error
@@ -105,7 +107,10 @@ function App() {
           <div className="portfolio-grid">
             <img src={akad} alt="Akad ceremony moment" />
             <img src={couplepotrait} alt="Outdoor wedding couple" />
-            <img src={akad2} alt="Wedding celebration with confetti" />
+            <img src={akad2} alt="akad ceremony moment" />
+            <img src={cakecutting} alt="Wedding celebration with confetti" />
+            <img src={groomsmen} alt="groomsmen shoot"/>
+            <img src={selfpotrait2} alt="self potrait" />
           </div>
         </div>
       </section>

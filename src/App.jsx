@@ -218,10 +218,7 @@ function App() {
                     style={{ cursor: "pointer" }}
                   >
                     <h3>{project.title}</h3>
-                    <p>View gallery</p>
-                    <span className="service-note">
-                      A collection of moments from this session.
-                    </span>
+                    <p>Click to view gallery</p>
                   </div>
                 ))}
               </div>

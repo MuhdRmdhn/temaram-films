@@ -1,15 +1,84 @@
 import { useState } from "react";
 import "./App.css";
 
-import akad from "../public/images/akad.jpg";
-import akad2 from "../public/images/akad2.jpg";
-import catcutting from "../public/images/cakecuttingconfetti.jpg";
-import couplepotrait from "../public/images/couplepotrait.jpg";
-import raffles from "../public/images/raffles.jpg";
-import selfpotrait from "../public/images/selfpotrait.jpg";
+import AZ1 from "../src/images/AZ/AZ1.jpg";
+import AZ2 from "../src/images/AZ/AZ2.jpg";
+import AZ3 from "../src/images/AZ/AZ3.jpg";
+import AZ4 from "../src/images/AZ/AZ4.jpg";
+import AZ5 from "../src/images/AZ/AZ5.jpg";
+import AZ6 from "../src/images/AZ/AZ6.jpg";
+import AZ7 from "../src/images/AZ/AZ7.jpg";
+import AZ8 from "../src/images/AZ/AZ8.jpg";
+import IS1 from "../src/images/IS/IS1.JPG";
+import IS2 from "../src/images/IS/IS2.JPG";
+import IS3 from "../src/images/IS/IS3.JPG";
+import IS4 from "../src/images/IS/IS4.JPG";
+import IS5 from "../src/images/IS/IS5.JPG";
+import IS6 from "../src/images/IS/IS6.JPG";
+import IS7 from "../src/images/IS/IS7.JPG";
+import IS8 from "../src/images/IS/IS8.JPG";
+import AD1 from "../src/images/AD/AD1.JPG";
+import AD2 from "../src/images/AD/AD2.JPG";
+import AD3 from "../src/images/AD/AD3.JPG";
+import AD4 from "../src/images/AD/AD4.JPG";
+import AD5 from "../src/images/AD/AD5.JPG";
+import AD6 from "../src/images/AD/AD6.JPG";
+import AD7 from "../src/images/AD/AD7.JPG";
+import AD8 from "../src/images/AD/AD8.JPG";
+import R1 from "../src/images/RUZ/R1.JPG";
+import R2 from "../src/images/RUZ/R2.JPG";
+import R3 from "../src/images/RUZ/R3.JPG";
+import R4 from "../src/images/RUZ/R4.JPG";
+import R5 from "../src/images/RUZ/R5.JPG";
+import R6 from "../src/images/RUZ/R6.JPG";
+import R7 from "../src/images/RUZ/R7.JPG";
+import R8 from "../src/images/RUZ/R8.JPG";
+import AA1 from "../src/images/AA/AA1.JPG";
+import AA2 from "../src/images/AA/AA2.JPG";
+import AA3 from "../src/images/AA/AA3.JPG";
+import AA4 from "../src/images/AA/AA4.JPG";
+import AA5 from "../src/images/AA/AA5.JPG";
+import AA6 from "../src/images/AA/AA6.JPG";
+import AA7 from "../src/images/AA/AA7.JPG";
+import AA8 from "../src/images/AA/AA8.JPG";
+import raffles from "../src/images/raffles.jpg";
+import selfpotrait from "../src/images/selfpotrait.jpg";
+import stairs from "../src/images/mywork/1.jpg";
+import bar from "../src/images/mywork/2.jpg";
+import bnw from "../src/images/mywork/3.jpg";
+import sunrise from "../src/images/mywork/4.jpg";
+import reflection from "../src/images/mywork/5.jpg";
+import beach from "../src/images/mywork/6.jpg";
+import dj from "../src/images/mywork/7.jpg";
+import ceramic from "../src/images/mywork/8.jpg";
+
 
 function App() {
   const [formStatus, setFormStatus] = useState("idle"); // idle | sending | success | error
+  const [selectedPortfolio, setSelectedPortfolio] = useState(null);
+
+  const portfolioProjects = [
+    {
+      title: "Asyura & Zuffean",
+      photos: [AZ1, AZ2, AZ3, AZ4, AZ5, AZ6, AZ7, AZ8],
+    },
+    {
+      title: "Irwan & Syazreema",
+      photos: [IS1, IS2, IS3, IS4, IS5, IS6, IS7, IS8],
+    },
+    {
+      title: "Diana & Akif",
+      photos: [AD1, AD2, AD3, AD4, AD5, AD6, AD7, AD8],
+    },
+    {
+      title: "Ruzaimi's Birthday",
+      photos: [R1, R2, R3, R4, R5, R6, R7, R8],
+    },
+    {
+      title: "Aisyah & Adil",
+      photos: [AA1, AA2, AA3, AA4, AA5, AA6, AA7, AA8],
+    },
+  ];
 
   const encode = (data) =>
     Object.keys(data)
@@ -50,7 +119,9 @@ function App() {
       <header className="nav">
         <div className="nav-logo">Temaram Films</div>
         <nav className="nav-links">
+          <a href="#hero" onClick={() => setSelectedPortfolio(null)}>Home</a>
           <a href="#about">About</a>
+          <a href="#portfolio-projects" onClick={() => setSelectedPortfolio(null)}>Portfolio</a>
           <a href="#services">Services</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -81,30 +152,108 @@ function App() {
             <img src={selfpotrait} alt="Quiet portrait" />
           </div>
           <div className="about-text">
-            <h2>About Temaram</h2>
+          <h2>About Temaram</h2>
             <p>
-              Temaram is the soft, dim warmth of light at its most honest moment.
-              Temaram Films is my way of capturing stories in that gentle glow —
+              Hi, I’m Ramadhan — the person behind Temaram Films.  
+              I started photography in 2020, beginning with film using a Canon AE-1. 
+              That process shaped the way I see light, moments, and patience in every frame.
+            </p>
+
+            <p>
+              After a couple of years, I transitioned into digital with the Fujifilm X-T10 and X-M5.  
+              Most of the work you see here is captured through these cameras — still carrying 
+              the same film-inspired approach, just in a different form.
+            </p>
+
+            <p>
+              Temaram is the soft, dim warmth of light at its most honest moment.  
+              Temaram Films is my way of capturing stories in that gentle glow —  
               warm, quiet, and deeply human.
             </p>
+
             <p>
-              I create cinematic portraits, couples sessions and intimate event
-              coverage with a nostalgic, film-inspired feel.
+              I focus on cinematic portraits, couples, and intimate events —  
+              creating images that feel natural, nostalgic, and true to the moment.
             </p>
           </div>
         </div>
       </section>
 
-      {/* FEATURED PORTFOLIO PREVIEW */}
-      <section id="portfolio" className="section section-portfolio">
+      {/* THROUGH MY LENS */}
+      <section id="through-my-lens" className="section section-portfolio">
         <div className="section-inner">
-          <h2>Featured Work</h2>
-          <p className="section-subtitle">A few frames in warm, cinematic light.</p>
+          <h2>Through My Lens</h2>
+          <p className="section-subtitle">
+            A quiet collection of moments — the light I’m drawn to, the spaces in between, 
+            and the way I see the world when everything slows down.
+          </p>
           <div className="portfolio-grid">
-            <img src={akad} alt="Akad ceremony moment" />
-            <img src={couplepotrait} alt="Outdoor wedding couple" />
-            <img src={akad2} alt="Wedding celebration with confetti" />
+            <img src={stairs} alt="Temaram personal work 1" />
+            <img src={bar} alt="Temaram personal work 2" />
+            <img src={bnw} alt="Temaram personal work 3" />
+            <img src={sunrise} alt="Temaram personal work 4" />
+            <img src={reflection} alt="Temaram personal work 5" />
+            <img src={beach} alt="Temaram personal work 6" />
+            <img src={dj} alt="Temaram personal work 7" />
+            <img src={ceramic} alt="Temaram personal work 8" />
           </div>
+        </div>
+      </section>
+
+      {/* PORTFOLIO PROJECTS */}
+      <section id="portfolio-projects" className="section section-portfolio">
+        <div className="section-inner">
+          {!selectedPortfolio ? (
+            <>
+              <h2>Portfolio Projects</h2>
+              <p className="section-subtitle">
+                A selection of stories and moments I’ve had the chance to capture.
+              </p>
+              <div className="services-grid">
+                {portfolioProjects.map((project) => (
+                  <div
+                    key={project.title}
+                    className="service-card"
+                    onClick={() => setSelectedPortfolio(project)}
+                    style={{ cursor: "pointer" }}
+                  >
+                    <h3>{project.title}</h3>
+                    <p>View gallery</p>
+                    <span className="service-note">
+                      A collection of moments from this session.
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </>
+          ) : (
+            <>
+              <h2>{selectedPortfolio.title}</h2>
+              <p className="section-subtitle">
+                A closer look into this story.
+              </p>
+
+              <div className="hero-buttons" style={{ marginBottom: "32px" }}>
+                <a
+                  href="#portfolio-projects"
+                  className="btn btn-secondary"
+                  onClick={() => setSelectedPortfolio(null)}
+                >
+                  Back to Portfolio
+                </a>
+              </div>
+
+              <div className="portfolio-grid">
+                {selectedPortfolio.photos.map((photo, index) => (
+                  <img
+                    key={index}
+                    src={photo}
+                    alt={`${selectedPortfolio.title} ${index + 1}`}
+                  />
+                ))}
+              </div>
+            </>
+          )}
         </div>
       </section>
 
@@ -155,7 +304,6 @@ function App() {
             data-netlify="true"
             action="/"
           >
-            {/* Netlify needs these */}
             <input type="hidden" name="form-name" value="contact" />
             <p style={{ display: "none" }}>
               <label>
